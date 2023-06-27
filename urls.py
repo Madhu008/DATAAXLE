@@ -1,0 +1,2 @@
+from django.urls import pathfrom parking.views import (  get_all_parking_spots,  search_nearby_parking_spots,  reserve_parking_spot,  get_all_reservations,)
+urlpatterns = [  path('parking-spots/', get_all_parking_spots, name='all_parking_spots'),  path('search-parking-spots/<float:lat>/<float:long>/<int:radius>/', search_nearby_parking_spots, name='search_parking_spots'),  path('reserve-parking-spot/<int:spot_id>/<int:hours>/', reserve_parking_spot, name='reserve_parking_spot'),  path('reservations/', get_all_reservations, name='all_reservations'),]
